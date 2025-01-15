@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
+import "package:inventaris_mobile/pages/items/shirt.dart";
 
 import "../components/card_header.dart";
-import "../components/card_subheader.dart";
 import "../components/text_styles.dart";
 
 class ListBarangPage extends StatelessWidget {
@@ -24,20 +24,54 @@ class ListBarangPage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CardHeader(
+                  imagePath: 'assets/baju.jpg',
+                  title: 'Cards Title 2',
+                  description: 'MyStringsSample.card_text',
+                  onSharePressed: () {
+                    print('Share button pressed!');
+                  },
+                  onExplorePressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ShirtPage()),
+                    );
+                  },
+                )),
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: CardHeader(),
+              child: CardHeader(
+                imagePath: 'assets/baju.jpg',
+                title: 'Cards Title 2',
+                description: 'MyStringsSample.card_text',
+                onSharePressed: () {
+                  print('Share button pressed!');
+                },
+                onExplorePressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ShirtPage()),
+                  );
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: CardHeader(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CardSubHeader(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CardHeader(),
+              child: CardHeader(
+                imagePath: 'assets/baju.jpg',
+                title: 'Cards Title 2',
+                description: 'MyStringsSample.card_text',
+                onSharePressed: () {
+                  print('Share button pressed!');
+                },
+                onExplorePressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ShirtPage()),
+                  );
+                },
+              ),
             ),
           ],
         ),
