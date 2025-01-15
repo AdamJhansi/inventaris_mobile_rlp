@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inventaris_mobile/pages/list_barang.dart';
 
 import '../components/animated_bar.dart';
 import 'dashboard.dart';
@@ -13,20 +14,18 @@ class MasterPage extends StatefulWidget {
 }
 
 class _MasterPageState extends State<MasterPage> {
-  int selectedNavIndex = 2;
+  int selectedNavIndex = 0;
   final List<Widget> pages = [
-    HistoryPage(),
-    SearchPage(),
     DashboardPage(),
+    HistoryPage(),
+    ListBarangPage(),
     NotificationPage(),
-    ProfilePage(),
   ];
   final List<IconData> icons = [
+    Icons.home,
     Icons.history,
     Icons.search,
-    Icons.home,
     Icons.notifications,
-    Icons.person,
   ];
 
   @override
@@ -91,25 +90,16 @@ class _MasterPageState extends State<MasterPage> {
   }
 }
 
-class SearchPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Text('List Barang Page', style: TextStyle(fontSize: 24))),
-    );
-  }
-}
-
 class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: Center(child: Text('Notes page', style: TextStyle(fontSize: 24))),
     );
   }
 }
+
 
 class NotificationPage extends StatelessWidget {
   @override
@@ -117,16 +107,6 @@ class NotificationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Center(child: Text('Crud Barang', style: TextStyle(fontSize: 24))),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Text('profile page', style: TextStyle(fontSize: 24))),
     );
   }
 }
