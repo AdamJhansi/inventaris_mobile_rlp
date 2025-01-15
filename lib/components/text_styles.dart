@@ -22,6 +22,15 @@ class AppTextStyles {
   }
 
   // Subtitle Style
+  static TextStyle title({required Color color}) {
+    return TextStyle(
+      fontSize: 25.0,
+      fontWeight: FontWeight.bold,
+      color: color,
+    );
+  }
+
+  // Subtitle Style
   static TextStyle subtitle({required Color color}) {
     return TextStyle(
       fontSize: 18.0,
