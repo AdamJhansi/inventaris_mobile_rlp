@@ -1,14 +1,14 @@
 class Items {
   final int? id;
   final String category;
-  final String name;
-  final double price;
+  final String label;
+  final int price;
   final String imagePath;
 
   Items({
     this.id,
     required this.category,
-    required this.name,
+    required this.label,
     required this.price,
     required this.imagePath,
   });
@@ -17,7 +17,7 @@ class Items {
     return {
       'id': id,
       'category': category,
-      'name': name,
+      'label': label,
       'price': price,
       'imagePath': imagePath,
     };
@@ -27,7 +27,7 @@ class Items {
     return Items(
       id: map['id'],
       category: map['category'],
-      name: map['name'],
+      label: map['label'],
       price: map['price'],
       imagePath: map['imagePath'],
     );

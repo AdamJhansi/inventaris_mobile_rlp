@@ -40,8 +40,8 @@ class DatabaseHelper {
       CREATE TABLE items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         category TEXT NOT NULL,
-        name TEXT NOT NULL,
-        price REAL NOT NULL,
+        label TEXT NOT NULL,
+        price INTEGER NOT NULL,
         imagePath TEXT NOT NULL
       );
     ''');
