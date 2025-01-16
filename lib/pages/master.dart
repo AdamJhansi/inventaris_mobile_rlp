@@ -3,6 +3,7 @@ import 'package:inventaris_mobile/pages/list_barang.dart';
 
 import '../components/animated_bar.dart';
 import 'dashboard.dart';
+import 'notes.dart';
 
 final Color? bottonNavBgColor = Colors.blueGrey[400];
 
@@ -14,18 +15,16 @@ class MasterPage extends StatefulWidget {
 }
 
 class _MasterPageState extends State<MasterPage> {
-  int selectedNavIndex = 0;
+  int selectedNavIndex = 1;
   final List<Widget> pages = [
+    NoteListScreen(),
     DashboardPage(),
-    HistoryPage(),
     ListBarangPage(),
-    NotificationPage(),
   ];
   final List<IconData> icons = [
+    Icons.edit_note,
     Icons.home,
-    Icons.history,
-    Icons.search,
-    Icons.notifications,
+    Icons.inventory,
   ];
 
   @override
@@ -38,7 +37,7 @@ class _MasterPageState extends State<MasterPage> {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.fromLTRB(24, 0, 24.0, 20),
+            margin: const EdgeInsets.fromLTRB(60, 0, 60, 20),
             decoration: BoxDecoration(
               color: bottonNavBgColor?.withOpacity(0.8),
               borderRadius: const BorderRadius.all(Radius.circular(24)),
@@ -87,26 +86,5 @@ class _MasterPageState extends State<MasterPage> {
         ),
       ),
     ]);
-  }
-}
-
-class HistoryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Text('Notes page', style: TextStyle(fontSize: 24))),
-    );
-  }
-}
-
-
-class NotificationPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey,
-      body: Center(child: Text('Crud Barang', style: TextStyle(fontSize: 24))),
-    );
   }
 }
