@@ -5,7 +5,7 @@ import 'package:inventaris_mobile/components/text_styles.dart';
 import 'package:inventaris_mobile/db/db_helper.dart';
 import 'package:inventaris_mobile/models/item_model.dart';
 import 'package:inventaris_mobile/pages/items/add/add_pants.dart';
-import 'package:inventaris_mobile/pages/items/update_shirt.dart';
+import 'package:inventaris_mobile/pages/items/update/update_pants.dart';
 import 'package:inventaris_mobile/pages/master.dart';
 
 class PantsPage extends StatefulWidget {
@@ -72,7 +72,7 @@ class _PantsPageState extends State<PantsPage> {
                             final result = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => EditShirtPage(item: item),
+                                builder: (context) => EditPantsPage(item: item),
                               ),
                             );
                             if (result == true) {

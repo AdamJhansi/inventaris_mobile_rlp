@@ -72,7 +72,6 @@ class _AddPantsState extends State<AddPants> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Tambah Celana'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 24, right: 24),

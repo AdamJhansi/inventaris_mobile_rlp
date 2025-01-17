@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:inventaris_mobile/components/text_styles.dart';
 import 'package:inventaris_mobile/db/db_helper.dart';
 import 'package:inventaris_mobile/models/item_model.dart';
-import 'package:inventaris_mobile/pages/items/update_shirt.dart';
+import 'package:inventaris_mobile/pages/items/update/update_shirt.dart';
 import 'package:inventaris_mobile/pages/master.dart';
 
 import 'add/add_shirt.dart';

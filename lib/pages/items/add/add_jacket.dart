@@ -2,11 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../../../components/form/form_label.dart';
-import '../../../components/form/form_price.dart';
-import '../../../db/db_helper.dart';
-import '../../../models/item_model.dart';
+import 'package:inventaris_mobile/components/form/form_label.dart';
+import 'package:inventaris_mobile/components/form/form_price.dart';
+import 'package:inventaris_mobile/db/db_helper.dart';
+import 'package:inventaris_mobile/models/item_model.dart';
 
 class AddJacket extends StatefulWidget {
   const AddJacket({super.key});
@@ -72,7 +71,6 @@ class _AddJacketState extends State<AddJacket> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Tambah Jaket'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 24, right: 24),

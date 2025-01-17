@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:inventaris_mobile/pages/items/jacket.dart";
+import "package:inventaris_mobile/pages/items/pants.dart";
 import "package:inventaris_mobile/pages/items/shirt.dart";
 
 import "../components/card_header.dart";
@@ -29,8 +31,8 @@ class _ListBarangPageState extends State<ListBarangPage> {
               padding: const EdgeInsets.all(8.0),
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
-                title: 'Cards Title 2',
-                description: 'MyStringsSample.card_text',
+                title: 'B a j u',
+                description: 'Total Baju : 0000',
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -43,12 +45,12 @@ class _ListBarangPageState extends State<ListBarangPage> {
               padding: const EdgeInsets.all(8.0),
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
-                title: 'Cards Title 2',
-                description: 'MyStringsSample.card_text',
+                title: 'C e l a n a',
+                description: 'Total Celana : 0000',
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ShirtPage()),
+                    MaterialPageRoute(builder: (context) => const PantsPage()),
                   );
                 },
               ),
@@ -57,12 +59,12 @@ class _ListBarangPageState extends State<ListBarangPage> {
               padding: const EdgeInsets.all(8.0),
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
-                title: 'Cards Title 2',
-                description: 'MyStringsSample.card_text',
+                title: 'J a k e t',
+                description: 'Total Jaket : 0000',
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ShirtPage()),
+                    MaterialPageRoute(builder: (context) => const JacketPage()),
                   );
                 },
               ),

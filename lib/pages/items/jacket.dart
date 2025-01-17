@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:inventaris_mobile/components/text_styles.dart';
 import 'package:inventaris_mobile/db/db_helper.dart';
 import 'package:inventaris_mobile/models/item_model.dart';
+import 'package:inventaris_mobile/pages/items/update/update_jacket.dart';
 import 'package:inventaris_mobile/pages/master.dart';
 
 import 'add/add_jacket.dart';
@@ -69,15 +70,15 @@ class _JacketPageState extends State<JacketPage> {
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: InkWell(
                           onTap: () async {
-                            // final result = await Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => EditJacketPage(item: item),
-                            //   ),
-                            // );
-                            // if (result == true) {
-                            //   _refreshItems();
-                            // }
+                            final result = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditJacketPage(item: item),
+                              ),
+                            );
+                            if (result == true) {
+                              _refreshItems();
+                            }
                           },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

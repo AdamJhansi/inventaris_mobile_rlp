@@ -108,4 +108,24 @@ class ItemsRepository {
       whereArgs: [id],
     );
   }
+
+  Future<List<Items>> getByCategories(List<String> categories) async {
+    final db = await DatabaseHelper.instance.database;
+    final placeholders = List.filled(categories.length, '?').join(', ');
+    final result = await db.query(
+      _tableName,
+      where: 'category IN ($placeholders)',
+      whereArgs: categories,
+    );
+    return result.map((map) => Items.fromMap(map)).toList();
+  }
+
+// void fetchItemsByCategories() async {
+//   final itemsRepository = ItemsRepository();
+//   final categories = ['baju', 'celana', 'jaket'];
+//   final items = await itemsRepository.getByCategories(categories);
+//   for (var item in items) {
+//     print('Item: ${item.label}, Category: ${item.category}');
+//   }
+// }
 }

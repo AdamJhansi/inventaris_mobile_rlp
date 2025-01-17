@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget FormText({required final initialValue, required final onChanged, final keyboardType}) {
+Widget FormText({required final initialValue, required final labelText, required final onChanged, final keyboardType}) {
   return TextFormField(
     initialValue: initialValue,
     decoration: InputDecoration(
@@ -14,7 +14,7 @@ Widget FormText({required final initialValue, required final onChanged, final ke
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(),
       ),
-      labelText: 'Label',
+      labelText: labelText,
     ),
     keyboardType: keyboardType,
     validator: (value) {

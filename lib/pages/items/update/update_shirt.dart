@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../../components/form/form_regular.dart';
-import '../../../db/db_helper.dart';
-import '../../../models/item_model.dart';
+import 'package:inventaris_mobile/components/form/form_regular.dart';
+import 'package:inventaris_mobile/db/db_helper.dart';
+import 'package:inventaris_mobile/models/item_model.dart';
 
 class EditShirtPage extends StatefulWidget {
   final Items item;
@@ -51,7 +50,6 @@ class _EditShirtPageState extends State<EditShirtPage> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text('Edit Item'),
         centerTitle: true,
       ),
       body: Padding(
@@ -59,8 +57,12 @@ class _EditShirtPageState extends State<EditShirtPage> {
         child: Form(
           key: _formKey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Text(
+                'Edit Baju',
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(height: 20),
               FormText(
                   initialValue: _label,
                   onChanged: (value) {
