@@ -34,6 +34,11 @@ class _PantsPageState extends State<PantsPage> {
     });
   }
 
+  Future<void> _deleteItems(int id) async {
+    await _itemsRepository.delete(id);
+    await _fetchItems();
+  }
+
   Future<void> _refreshItems() async {
     await _fetchItems();
   }
@@ -112,6 +117,29 @@ class _PantsPageState extends State<PantsPage> {
                                         ],
                                       ),
                                     ),
+                                    TextButton(
+                                      onPressed: () => showDialog<String>(
+                                        context: context,
+                                        builder: (BuildContext context) => AlertDialog(
+                                          title: const Text('Hapus Barang'),
+                                          content: const Text('Apakah anda yakin hapus barang ini?'),
+                                          actions: <Widget>[
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                                              child: const Text('Tidak', style: TextStyle(color: Colors.black)),
+                                            ),
+                                            TextButton(
+                                              onPressed: () => _deleteItems(item.id!),
+                                              child: const Text(
+                                                'Hapus',
+                                                style: TextStyle(color: Colors.red),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      child: Icon(Icons.delete, color: Colors.red),
+                                    )
                                   ],
                                 ),
                               ),
