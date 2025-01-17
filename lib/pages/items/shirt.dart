@@ -17,26 +17,24 @@ class ShirtPage extends StatefulWidget {
 }
 
 class _ShirtPageState extends State<ShirtPage> {
-  final ItemsRepository _itemsRepository = ItemsRepository(); // Instance of repository
-  List<Items> _items = []; // List to hold items from the database
-  bool _isLoading = true; // Loading state
+  final ItemsRepository _itemsRepository = ItemsRepository();
+  List<Items> _items = [];
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _fetchItems(); // Fetch items on page load
+    _fetchItems();
   }
 
-  // Fetch items from the database
   Future<void> _fetchItems() async {
-    final items = await _itemsRepository.getAll();
+    final items = await _itemsRepository.getByCategories(["baju"]);
     setState(() {
       _items = items;
       _isLoading = false;
     });
   }
 
-  // Refresh data after adding a new item
   Future<void> _refreshItems() async {
     await _fetchItems();
   }
@@ -58,7 +56,7 @@ class _ShirtPageState extends State<ShirtPage> {
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : _items.isEmpty
-              ? Center(child: Text('No items found'))
+              ? Center(child: Text('Tidak Ada Barang :)'))
               : RefreshIndicator(
                   onRefresh: _refreshItems,
                   child: ListView.builder(
@@ -72,7 +70,6 @@ class _ShirtPageState extends State<ShirtPage> {
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: InkWell(
                           onTap: () async {
-                            // Navigasi ke halaman Edit
                             final result = await Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -140,7 +137,7 @@ class _ShirtPageState extends State<ShirtPage> {
               ),
             );
             if (updated == true) {
-              await _refreshItems(); // Refresh items if new item added
+              await _refreshItems();
             }
           },
           child: Text(
