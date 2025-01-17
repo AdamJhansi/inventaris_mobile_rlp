@@ -109,6 +109,12 @@ class ItemsRepository {
     );
   }
 
+  Future<int> getCount(String category) async {
+    final db = await DatabaseHelper.instance.database;
+    final result = await db.rawQuery('SELECT COUNT(*) FROM $_tableName WHERE category = ?', [category]);
+    return Sqflite.firstIntValue(result) ?? 0;
+  }
+
   Future<List<Items>> getByCategories(List<String> categories) async {
     final db = await DatabaseHelper.instance.database;
     final placeholders = List.filled(categories.length, '?').join(', ');

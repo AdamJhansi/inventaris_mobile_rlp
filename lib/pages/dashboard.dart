@@ -27,10 +27,10 @@ class DashboardPage extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0, top: 40.0),
-                      child: Text("Header", style: AppTextStyles.header(color: Colors.white)),
+                      child: Text("Butik Mamih", style: AppTextStyles.header(color: Colors.white)),
                     ),
                     Text(
-                      "SUB TITLE",
+                      "Inventaris Butik Mamih",
                       style: AppTextStyles.subtitle(color: Colors.white),
                     ),
                   ],

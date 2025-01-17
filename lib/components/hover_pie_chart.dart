@@ -1,6 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import '../db/db_helper.dart';
+
 class InteractivePieChartWithWidgetTooltip extends StatefulWidget {
   @override
   _InteractivePieChartWithWidgetTooltipState createState() => _InteractivePieChartWithWidgetTooltipState();
@@ -9,6 +11,27 @@ class InteractivePieChartWithWidgetTooltip extends StatefulWidget {
 class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieChartWithWidgetTooltip> {
   int? _touchedIndex;
   Widget? _tooltipWidget;
+  int _totalBaju = 0;
+  int _totalCelana = 0;
+  int _totalJaket = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  Future<void> _fetchData() async {
+    final repository = ItemsRepository();
+    final totalBaju = await repository.getCount('baju');
+    final totalCelana = await repository.getCount('celana');
+    final totalJaket = await repository.getCount('jaket');
+    setState(() {
+      _totalBaju = totalBaju;
+      _totalCelana = totalCelana;
+      _totalJaket = totalJaket;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +73,13 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
   }
 
   List<PieChartSectionData> _buildSections() {
+    final total = _totalBaju + _totalCelana + _totalJaket;
     final sections = [
       PieChartSectionData(
         borderSide: BorderSide(color: Colors.blueGrey),
         color: Colors.white,
-        value: 40,
-        title: '40%',
+        value: total > 0 ? (_totalBaju / total) * 100 : 0,
+        title: '${_totalBaju}%',
         radius: _touchedIndex == 0 ? 60 : 50,
         titleStyle: TextStyle(
           fontSize: 16,
@@ -66,8 +90,8 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
       PieChartSectionData(
         borderSide: BorderSide(color: Colors.grey),
         color: Colors.blueGrey,
-        value: 30,
-        title: '30%',
+        value: total > 0 ? (_totalCelana / total) * 100 : 0,
+        title: '${_totalCelana}%',
         radius: _touchedIndex == 1 ? 60 : 50,
         titleStyle: TextStyle(
           fontSize: 16,
@@ -78,8 +102,8 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
       PieChartSectionData(
         borderSide: BorderSide(color: Colors.grey),
         color: Colors.grey,
-        value: 20,
-        title: '20%',
+        value: total > 0 ? (_totalJaket / total) * 100 : 0,
+        title: '${_totalJaket}%',
         radius: _touchedIndex == 2 ? 60 : 50,
         titleStyle: TextStyle(
           fontSize: 16,
@@ -95,11 +119,11 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
     if (index == null) return null;
     switch (index) {
       case 0:
-        return _buildTooltipWidget('Empat Pulu', Icons.water_drop, Colors.blueGrey);
+        return _buildTooltipWidget('Baju: $_totalBaju', Icons.water_drop, Colors.blueGrey);
       case 1:
-        return _buildTooltipWidget('tiga puluh', Icons.fireplace, Colors.blueGrey);
+        return _buildTooltipWidget('Celana: $_totalCelana', Icons.fireplace, Colors.blueGrey);
       case 2:
-        return _buildTooltipWidget('sepuluh', Icons.sunny, Colors.blueGrey);
+        return _buildTooltipWidget('Jaket: $_totalJaket', Icons.sunny, Colors.blueGrey);
       default:
         return null;
     }
