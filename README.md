@@ -1,18 +1,32 @@
-# inventaris_mobile
+# TUGAS RPL
 
-A new Flutter project.
+Aplikasi Inventaris Mobile || Pemantauan Data
 
-## Getting Started
+## Installation
 
-flutter build apk --release
+Pastikan sudah menginstal [Flutter](https://docs.flutter.dev/get-started/install/windows/mobile)
 
-This project is a starting point for a Flutter application.
+Clone this repository
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone git@github.com:AdamJhansi/inventaris_mobile_rlp.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+cd inventaris_mobile_rlp
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Add Dependencies
+
+```bash
+flutter pub get
+```
+
+
+## Contributing
+
+Semoga Nilai UTS Dapet A, Amiiinnnnnnn
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
