@@ -1,13 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:inventaris_mobile/pages/items/add_pants.dart';
+import 'package:inventaris_mobile/components/text_styles.dart';
+import 'package:inventaris_mobile/db/db_helper.dart';
+import 'package:inventaris_mobile/models/item_model.dart';
+import 'package:inventaris_mobile/pages/items/add/add_pants.dart';
 import 'package:inventaris_mobile/pages/items/update_shirt.dart';
-
-import '../../components/text_styles.dart';
-import '../../db/db_helper.dart';
-import '../../models/item_model.dart';
-import '../master.dart';
+import 'package:inventaris_mobile/pages/master.dart';
 
 class PantsPage extends StatefulWidget {
   const PantsPage({super.key});
@@ -44,19 +43,19 @@ class _PantsPageState extends State<PantsPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 8.0),
           child: Text("Pants"),
         ),
         centerTitle: true,
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : _items.isEmpty
-              ? Center(child: Text('Tidak Ada Barang :)'))
+              ? const Center(child: Text('Tidak Ada Barang :)'))
               : RefreshIndicator(
                   onRefresh: _refreshItems,
                   child: ListView.builder(
@@ -133,7 +132,7 @@ class _PantsPageState extends State<PantsPage> {
             final updated = await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => AddPants(),
+                builder: (context) => const AddPants(),
               ),
             );
             if (updated == true) {

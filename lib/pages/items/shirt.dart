@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:inventaris_mobile/components/text_styles.dart';
+import 'package:inventaris_mobile/db/db_helper.dart';
+import 'package:inventaris_mobile/models/item_model.dart';
 import 'package:inventaris_mobile/pages/items/update_shirt.dart';
+import 'package:inventaris_mobile/pages/master.dart';
 
-import '../../components/text_styles.dart';
-import '../../db/db_helper.dart';
-import '../../models/item_model.dart';
-import '../master.dart';
-import 'add_shirt.dart';
+import 'add/add_shirt.dart';
 
 class ShirtPage extends StatefulWidget {
   const ShirtPage({super.key});
@@ -44,19 +44,19 @@ class _ShirtPageState extends State<ShirtPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 8.0),
           child: Text("T-Shirt"),
         ),
         centerTitle: true,
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : _items.isEmpty
-              ? Center(child: Text('Tidak Ada Barang :)'))
+              ? const Center(child: Text('Tidak Ada Barang :)'))
               : RefreshIndicator(
                   onRefresh: _refreshItems,
                   child: ListView.builder(
@@ -133,7 +133,7 @@ class _ShirtPageState extends State<ShirtPage> {
             final updated = await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => AddShirt(),
+                builder: (context) => const AddShirt(),
               ),
             );
             if (updated == true) {
