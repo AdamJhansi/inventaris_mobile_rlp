@@ -4,6 +4,7 @@ import "package:inventaris_mobile/pages/items/pants.dart";
 import "package:inventaris_mobile/pages/items/shirt.dart";
 
 import "../components/card_header.dart";
+import "../db/db_helper.dart";
 
 class ListBarangPage extends StatefulWidget {
   const ListBarangPage({super.key});
@@ -13,6 +14,28 @@ class ListBarangPage extends StatefulWidget {
 }
 
 class _ListBarangPageState extends State<ListBarangPage> {
+  int _totalBaju = 0;
+  int _totalCelana = 0;
+  int _totalJaket = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  Future<void> _fetchData() async {
+    final repository = ItemsRepository();
+    final totalBaju = await repository.getCount('baju');
+    final totalCelana = await repository.getCount('celana');
+    final totaljaket = await repository.getCount('jaket');
+    setState(() {
+      _totalBaju = totalBaju;
+      _totalCelana = totalCelana;
+      _totalJaket = totaljaket;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -32,7 +55,7 @@ class _ListBarangPageState extends State<ListBarangPage> {
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
                 title: 'B a j u',
-                description: 'Total Baju : 0000',
+                description: 'Total Baju : $_totalBaju',
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -46,7 +69,7 @@ class _ListBarangPageState extends State<ListBarangPage> {
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
                 title: 'C e l a n a',
-                description: 'Total Celana : 0000',
+                description: 'Total Celana : $_totalCelana',
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -60,7 +83,7 @@ class _ListBarangPageState extends State<ListBarangPage> {
               child: CardHeader(
                 imagePath: 'assets/baju.jpg',
                 title: 'J a k e t',
-                description: 'Total Jaket : 0000',
+                description: 'Total Jaket : $_totalJaket',
                 onPressed: () {
                   Navigator.push(
                     context,

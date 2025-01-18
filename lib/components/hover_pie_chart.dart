@@ -76,36 +76,36 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
     final total = _totalBaju + _totalCelana + _totalJaket;
     final sections = [
       PieChartSectionData(
-        borderSide: BorderSide(color: Colors.blueGrey),
+        borderSide: const BorderSide(color: Colors.blueGrey),
         color: Colors.white,
         value: total > 0 ? (_totalBaju / total) * 100 : 0,
         title: '${_totalBaju}%',
         radius: _touchedIndex == 0 ? 60 : 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
           color: Colors.blueGrey,
         ),
       ),
       PieChartSectionData(
-        borderSide: BorderSide(color: Colors.grey),
+        borderSide: const BorderSide(color: Colors.grey),
         color: Colors.blueGrey,
         value: total > 0 ? (_totalCelana / total) * 100 : 0,
         title: '${_totalCelana}%',
         radius: _touchedIndex == 1 ? 60 : 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
       ),
       PieChartSectionData(
-        borderSide: BorderSide(color: Colors.grey),
+        borderSide: const BorderSide(color: Colors.grey),
         color: Colors.grey,
         value: total > 0 ? (_totalJaket / total) * 100 : 0,
         title: '${_totalJaket}%',
         radius: _touchedIndex == 2 ? 60 : 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
           color: Colors.white,
@@ -131,7 +131,7 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
 
   Widget _buildTooltipWidget(String text, IconData icon, Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
         color: color.withOpacity(0.8),
         borderRadius: BorderRadius.circular(8),
@@ -140,10 +140,10 @@ class _InteractivePieChartWithWidgetTooltipState extends State<InteractivePieCha
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, color: Colors.white),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(
             text,
-            style: TextStyle(color: Colors.white, fontSize: 14),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),
