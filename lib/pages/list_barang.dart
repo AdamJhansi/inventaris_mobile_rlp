@@ -3,7 +3,7 @@ import "package:inventaris_mobile/pages/items/jacket.dart";
 import "package:inventaris_mobile/pages/items/pants.dart";
 import "package:inventaris_mobile/pages/items/shirt.dart";
 
-import "../components/card_header.dart";
+import "../components/cards/card_header.dart";
 import "../db/db_helper.dart";
 
 class ListBarangPage extends StatefulWidget {

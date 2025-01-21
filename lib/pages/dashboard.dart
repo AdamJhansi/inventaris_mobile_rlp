@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/chart/hover_pie_chart.dart';
 import '../components/double_circle.dart';
-import '../components/hover_pie_chart.dart';
 import '../components/text_styles.dart';
 
 class DashboardPage extends StatelessWidget {
