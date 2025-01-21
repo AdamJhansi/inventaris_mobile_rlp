@@ -66,7 +66,7 @@ class _NoteListScreenState extends State<NoteListScreen> {
       floatingActionButton: Container(
         width: 160,
         height: 50,
-        margin: EdgeInsets.only(bottom: 100, right: 60),
+        margin: EdgeInsets.only(bottom: 100, right: 50),
         child: FloatingActionButton(
           backgroundColor: bottonNavBgColor?.withOpacity(0.8),
           onPressed: () async {

@@ -23,14 +23,14 @@ class DashboardPage extends StatelessWidget {
               children: [
                 doubleCircle(),
                 Column(
-                  // mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0, top: 40.0),
-                      child: Text("Butik Mamih", style: AppTextStyles.header(color: Colors.white)),
+                      child: Text("INVENTORY", style: AppTextStyles.header(color: Colors.white)),
                     ),
                     Text(
-                      "Inventaris Butik Mamih",
+                      "Management Pakaian",
                       style: AppTextStyles.subtitle(color: Colors.white),
                     ),
                   ],

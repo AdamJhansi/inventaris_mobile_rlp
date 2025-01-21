@@ -67,7 +67,7 @@ class _ListBarangPageState extends State<ListBarangPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CardHeader(
-                imagePath: 'assets/baju.jpg',
+                imagePath: 'assets/celana.png',
                 title: 'C e l a n a',
                 description: 'Total Celana : $_totalCelana',
                 onPressed: () {
@@ -81,7 +81,7 @@ class _ListBarangPageState extends State<ListBarangPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CardHeader(
-                imagePath: 'assets/baju.jpg',
+                imagePath: 'assets/jaket.jpg',
                 title: 'J a k e t',
                 description: 'Total Jaket : $_totalJaket',
                 onPressed: () {

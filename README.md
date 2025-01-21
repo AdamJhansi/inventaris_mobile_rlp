@@ -22,6 +22,11 @@ Add Dependencies
 flutter pub get
 ```
 
+how to bundling app
+
+```bash
+flutter build apk --release
+```
 
 ## Contributing
 
