@@ -2,23 +2,14 @@
 
 ## Nama Kelompok
 
-Boas Agung Saputra Samosir - 50421289
-Muhammad Adam Jhansi - 51421657
-Muhammad Dafa Alfaridzy - 50421933
-Rizki Fauzan Yahya - 51421342
-Vieri Giofanov - 51421503
-
 ```python
-students = [
+kelompokEmpat = [
     {"name": "Boas Agung Saputra Samosir", "id": "50421289"},
     {"name": "Muhammad Adam Jhansi", "id": "51421657"},
     {"name": "Muhammad Dafa Alfaridzy", "id": "50421933"},
     {"name": "Rizki Fauzan Yahya", "id": "51421342"},
     {"name": "Vieri Giofanov", "id": "51421503"}
 ]
-
-for student in students:
-    print(f"Name: {student['name']} - ID: {student['id']}")
 
 ```
 
