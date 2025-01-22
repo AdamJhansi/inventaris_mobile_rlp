@@ -1,10 +1,18 @@
 # TUGAS RPL KELOMPOK 4
 
+## Nama Kelompok
+
+Boas Agung Saputra Samosir - 50421289
+Muhammad Adam Jhansi - 51421657
+Muhammad Dafa Alfaridzy - 50421933
+Rizki Fauzan Yahya - 51421342
+Vieri Giofanov - 51421503
+
 LINK TRELLO
 
 https://trello.com/invite/b/6782239dda2bf2d3eec6f5ce/ATTI2e5f7fb7453150f80eff8f99dcf5695b402E266B/rpl2
 
-Aplikasi Inventaris Mobile || Pemantauan Data
+Aplikasi Inventaris Mobile || Toko Pakaian
 
 ## Installation
 
