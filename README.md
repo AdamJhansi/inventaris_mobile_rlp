@@ -1,4 +1,8 @@
-# TUGAS RPL
+# TUGAS RPL KELOMPOK 4
+
+LINK TRELLO
+
+https://trello.com/invite/b/6782239dda2bf2d3eec6f5ce/ATTI2e5f7fb7453150f80eff8f99dcf5695b402E266B/rpl2
 
 Aplikasi Inventaris Mobile || Pemantauan Data
 
